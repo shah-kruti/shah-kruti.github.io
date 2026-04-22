@@ -8,12 +8,13 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script>(function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
 
   <nav>
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Kruti <span>Shah</span></a>
+      <a href="index.html" class="nav-logo"><span class="logo-mark">KS</span>Kruti <span class="logo-last">Shah</span></a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">My Story</a></li>
@@ -22,19 +23,23 @@
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
     </div>
   </nav>
 
   <div class="page-hero">
     <div class="container">
       <p class="section-label">AI Lab</p>
-      <h1 class="section-title" style="font-size:2.5rem;">Built with AI.<br><span style="color:var(--purple-600);">Proof, not claims.</span></h1>
+      <h1 class="section-title" style="font-size:2.5rem;">Built with AI.<br><span style="color:var(--purple-600);">Human-directed. AI-assisted.</span></h1>
       <p style="font-size:1.0625rem;color:var(--gray-500);max-width:580px;margin-top:1rem;line-height:1.75;">I'm learning AI by building with it. This page is where I share the tools, experiments, and prototypes I create — raw, real, and always a work in progress.</p>
     </div>
   </div>
 
   <!-- Philosophy -->
-  <section style="padding:3rem 0 0;">
+  <section style="padding:3rem 0;background:var(--purple-50);border-top:1px solid var(--purple-100);border-bottom:1px solid var(--purple-100);">
     <div class="container">
       <div style="max-width:680px;margin:0 auto;text-align:center;">
         <p style="font-size:1.0625rem;color:var(--gray-700);line-height:1.8;font-style:italic;">"I don't claim to be an AI expert. I claim to be someone who uses AI every day to work better, think faster, and build things that would have taken me ten times longer without it. This entire website is exhibit A."</p>
@@ -43,92 +48,52 @@
     </div>
   </section>
 
-  <!-- Tools -->
+  <!-- AI Projects -->
   <section>
     <div class="container">
-      <p class="section-label">Live tools</p>
-      <h2 class="section-title">Try them yourself</h2>
-      <p class="section-sub mb-4">These are AI-powered PM tools I've built and continue to iterate on. Click to try them live.</p>
+      <p class="section-label">AI Projects</p>
+      <h2 class="section-title">Things I've built with AI</h2>
+      <p class="section-sub mb-4">Real things, built with intention, that solve a real problem or tell a real story.</p>
 
       <div class="grid-2">
-        <div class="card card-accent" style="display:flex;flex-direction:column;justify-content:space-between;min-height:240px;">
+        <div class="card card-accent" style="display:flex;flex-direction:column;justify-content:space-between;min-height:260px;">
           <div>
             <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem;">
-              <span class="tag">Live tool</span>
+              <span class="tag">Portfolio</span>
               <span class="tag">Claude-powered</span>
             </div>
-            <h3 style="margin-bottom:0.75rem;">User story generator</h3>
-            <p style="font-size:0.9375rem;color:var(--gray-600);">Describe a feature in plain English and get a structured user story — with acceptance criteria — ready for your sprint board. Built using Claude API.</p>
-          </div>
-          <a href="tools/user-story-generator.html" class="btn btn-primary" style="margin-top:1.5rem;align-self:flex-start;">Try it →</a>
-        </div>
-
-        <div class="card card-accent" style="display:flex;flex-direction:column;justify-content:space-between;min-height:240px;">
-          <div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem;">
-              <span class="tag">Live tool</span>
-              <span class="tag">Claude-powered</span>
+            <h3 style="margin-bottom:0.75rem;">This portfolio website</h3>
+            <p style="font-size:0.9375rem;">Every line of HTML, CSS, and copy on this site was built using Claude. No developer, no design agency, no templates — just a clear vision, the right prompts, and a lot of iteration. Fully responsive, with dark mode.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:1rem;">
+              <span class="tag">Claude</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">VS Code</span>
             </div>
-            <h3 style="margin-bottom:0.75rem;">PRD writer</h3>
-            <p style="font-size:0.9375rem;color:var(--gray-600);">Input your product idea, target user, and key goals — get a structured PRD outline back in seconds. Great for early-stage alignment.</p>
           </div>
-          <a href="tools/prd-writer.html" class="btn btn-primary" style="margin-top:1.5rem;align-self:flex-start;">Try it →</a>
+          <a href="index.html" class="btn btn-primary" style="margin-top:1.5rem;align-self:flex-start;">View site →</a>
         </div>
-      </div>
 
-      <!-- Coming soon -->
-      <div class="grid-3" style="margin-top:1.5rem;">
-        <div class="card" style="opacity:0.7;">
-          <div style="display:flex;gap:8px;margin-bottom:0.75rem;"><span class="tag-gray tag">Coming soon</span></div>
-          <h4 style="margin-bottom:0.5rem;">Stakeholder email writer</h4>
-          <p style="font-size:0.9375rem;">Draft clear, professional stakeholder updates from bullet points in seconds.</p>
-        </div>
-        <div class="card" style="opacity:0.7;">
-          <div style="display:flex;gap:8px;margin-bottom:0.75rem;"><span class="tag-gray tag">Coming soon</span></div>
-          <h4 style="margin-bottom:0.5rem;">Sprint retrospective helper</h4>
-          <p style="font-size:0.9375rem;">Structure your retro notes into actionable insights and next steps.</p>
-        </div>
-        <div class="card" style="opacity:0.7;">
-          <div style="display:flex;gap:8px;margin-bottom:0.75rem;"><span class="tag-gray tag">Coming soon</span></div>
-          <h4 style="margin-bottom:0.5rem;">Acceptance criteria builder</h4>
-          <p style="font-size:0.9375rem;">Turn vague requirements into precise, testable acceptance criteria.</p>
+        <div class="card" style="display:flex;flex-direction:column;justify-content:center;min-height:260px;opacity:0.6;border-style:dashed;">
+          <p style="font-size:0.875rem;color:var(--gray-400);text-align:center;">More projects coming soon.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How this site was built -->
-  <section style="background:var(--purple-900);padding:4rem 0;">
-    <div class="container">
-      <div style="max-width:700px;margin:0 auto;text-align:center;">
-        <p style="font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-400);margin-bottom:1rem;">Meta</p>
-        <h2 style="color:#fff;margin-bottom:1.25rem;">This website was built entirely with AI</h2>
-        <p style="color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:2rem;">Every line of copy, every design decision, every page of code on this site was generated using Claude and ChatGPT. No web agency. No developer. No design degree. Just me, a clear vision, and the right prompts.</p>
-        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <span style="background:rgba(255,255,255,0.08);color:var(--purple-400);font-size:0.8125rem;padding:6px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.12);">Claude</span>
-          <span style="background:rgba(255,255,255,0.08);color:var(--purple-400);font-size:0.8125rem;padding:6px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.12);">ChatGPT</span>
-          <span style="background:rgba(255,255,255,0.08);color:var(--purple-400);font-size:0.8125rem;padding:6px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.12);">GitHub Pages</span>
-          <span style="background:rgba(255,255,255,0.08);color:var(--purple-400);font-size:0.8125rem;padding:6px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.12);">VS Code</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <footer>
     <div class="footer-inner">
-      <span class="footer-logo">Kruti <span>Shah</span></span>
-      <ul class="footer-links">
-        <li><a href="about.html">My Story</a></li>
-        <li><a href="portfolio.html">Work</a></li>
-        <li><a href="ailab.html">AI Lab</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-inner">
-      <p class="footer-built">Built entirely with AI · Claude &amp; ChatGPT · shah-kruti.github.io · 2026</p>
+      <p class="footer-built">Human-directed. AI-assisted. &copy; 2026</p>
     </div>
   </footer>
 
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      var c = document.documentElement.getAttribute('data-theme');
+      var n = c === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', n);
+      localStorage.setItem('theme', n);
+    });
+  </script>
 </body>
 </html>

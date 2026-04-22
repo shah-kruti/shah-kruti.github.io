@@ -6,14 +6,109 @@
   <title>Work · Kruti Shah</title>
   <meta name="description" content="Case studies and project work from Kruti Shah — PM across Fintech and EdTech." />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .ht-wrapper {
+      overflow-x: auto;
+      padding: 0.5rem 0 1.5rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    .ht-track {
+      display: flex;
+      align-items: center;
+      min-width: 760px;
+      position: relative;
+    }
+    .ht-track::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 34px;
+      right: 34px;
+      height: 2px;
+      background: var(--purple-200);
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+    .ht-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .ht-top {
+      height: 130px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+      padding: 0 0.4rem 0.7rem;
+    }
+    .ht-bottom {
+      height: 130px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      padding: 0.7rem 0.4rem 0;
+    }
+    .ht-node {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: var(--purple-600);
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px var(--purple-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 0.8125rem;
+      text-align: center;
+      line-height: 1.25;
+      flex-shrink: 0;
+    }
+    .ht-node.ht-edu {
+      background: white;
+      color: var(--purple-700);
+      border-color: var(--purple-200);
+      box-shadow: 0 0 0 3px var(--purple-100);
+    }
+    .ht-date { font-size: 0.6875rem; color: var(--gray-500); font-weight: 500; margin-bottom: 0.2rem; }
+    .ht-title { font-size: 0.8125rem; font-weight: 600; color: var(--gray-700); line-height: 1.35; margin-bottom: 0.15rem; }
+    .ht-org { font-size: 0.75rem; color: var(--gray-500); line-height: 1.3; }
+    .ht-connector {
+      width: 1px;
+      background: var(--purple-200);
+    }
+    .ht-conn-top { height: 0.7rem; }
+    .ht-conn-bot { height: 0.7rem; }
+    [data-theme="dark"] .ht-node { border-color: var(--gray-700); }
+    [data-theme="dark"] .ht-node.ht-edu { background: var(--gray-700); border-color: var(--purple-200); }
+
+    /* Section-specific dark mode backgrounds */
+    [data-theme="dark"] .career-section {
+      background: #1f1b3e !important;
+      border-color: #2d2860 !important;
+    }
+    [data-theme="dark"] .approach-section {
+      background: #13102a !important;
+      border-color: #1f1b3e !important;
+    }
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script>(function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
 
   <nav>
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Kruti <span>Shah</span></a>
+      <a href="index.html" class="nav-logo"><span class="logo-mark">KS</span>Kruti <span class="logo-last">Shah</span></a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">My Story</a></li>
@@ -22,88 +117,142 @@
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
     </div>
   </nav>
 
   <div class="page-hero">
     <div class="container">
-      <p class="section-label">My work</p>
-      <h1 class="section-title" style="font-size:2.5rem;">Projects that shaped<br><span style="color:var(--purple-600);">how I think about product.</span></h1>
-      <p style="font-size:1.0625rem;color:var(--gray-500);max-width:560px;margin-top:1rem;line-height:1.75;">Each case study below is a real problem I owned — from messy discovery to shipped outcome. I focus on the thinking, not just the result.</p>
+      <p class="section-label">Education & Experience</p>
+      <h1 class="section-title" style="font-size:2.5rem;">The what, where, when, how,<br><span style="color:var(--purple-600);">and why of my PM journey.</span></h1>
+      <p style="font-size:1.0625rem;color:var(--gray-500);max-width:560px;margin-top:1rem;line-height:1.75;">This is the full picture of how I became the PM I am today.</p>
     </div>
   </div>
 
-  <!-- Case Studies -->
-  <section>
+  <!-- Career Timeline -->
+  <section class="career-section" style="background:#ffffff;border-top:1px solid var(--purple-100);border-bottom:1px solid var(--purple-100);">
     <div class="container">
+      <p class="section-label">Career path</p>
+      <h2 class="section-title">Where I've been</h2>
+      <p class="section-sub mb-4">From data analyst to product owner — across three industries and one master's degree picked up along the way.</p>
 
-      <!-- Case Study 1 -->
-      <div class="card" style="margin-bottom:1.5rem;padding:2.5rem;">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;">
-          <div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:0.75rem;">
-              <span class="tag">Fintech</span>
-              <span class="tag">Platform PM</span>
-              <span class="tag">B2B</span>
+      <div class="ht-wrapper">
+        <div class="ht-track">
+
+          <!-- 1: B.E. Mumbai — ABOVE (education) -->
+          <div class="ht-item">
+            <div class="ht-top">
+              <p class="ht-date">Jun 2013 – May 2017</p>
+              <p class="ht-title">B.E. in Information Technology</p>
+              <p class="ht-org">University of Mumbai, India</p>
             </div>
-            <h2 style="font-size:1.5rem;margin-bottom:0.5rem;">Payment platform product ownership at BillDesk</h2>
-            <p style="font-size:0.9375rem;color:var(--gray-500);">Technical Product Owner · BillDesk · India</p>
+            <div class="ht-connector ht-conn-top"></div>
+            <div class="ht-node ht-edu">2013</div>
+            <div class="ht-connector ht-conn-bot"></div>
+            <div class="ht-bottom"></div>
           </div>
-        </div>
 
-        <div class="grid-3" style="margin-bottom:1.5rem;">
-          <div style="background:var(--gray-50);border-radius:var(--radius-md);padding:1rem;">
-            <p style="font-size:0.75rem;font-weight:600;color:var(--purple-600);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.25rem;">The problem</p>
-            <p style="font-size:0.9375rem;">A major client product lacked a dedicated owner. Engineering, business, and client teams were misaligned — leading to delays, rework, and frustrated stakeholders.</p>
+          <!-- 2: Accenture — BELOW (work) -->
+          <div class="ht-item">
+            <div class="ht-top"></div>
+            <div class="ht-connector ht-conn-top"></div>
+            <div class="ht-node">2017</div>
+            <div class="ht-connector ht-conn-bot"></div>
+            <div class="ht-bottom">
+              <p class="ht-date">Sep 2017 – Oct 2018</p>
+              <p class="ht-title">Business Data Analyst</p>
+              <p class="ht-org">Accenture, India</p>
+            </div>
           </div>
-          <div style="background:var(--gray-50);border-radius:var(--radius-md);padding:1rem;">
-            <p style="font-size:0.75rem;font-weight:600;color:var(--purple-600);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.25rem;">My approach</p>
-            <p style="font-size:0.9375rem;">Took end-to-end ownership of the product. Built documentation from scratch, ran sprint ceremonies, created a stakeholder communication cadence, and became the single source of truth.</p>
-          </div>
-          <div style="background:var(--gray-50);border-radius:var(--radius-md);padding:1rem;">
-            <p style="font-size:0.75rem;font-weight:600;color:var(--purple-600);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.25rem;">The outcome</p>
-            <p style="font-size:0.9375rem;">Delivered a complex backend migration on time with full stakeholder alignment. Received director-level recognition for translating technical complexity into business clarity.</p>
-          </div>
-        </div>
 
-        <div style="border-top:1px solid var(--gray-200);padding-top:1.25rem;">
-          <p style="font-size:0.875rem;font-weight:600;color:var(--gray-500);margin-bottom:0.5rem;">What I learned</p>
-          <p style="font-size:0.9375rem;color:var(--gray-700);">The most valuable thing a PM can bring to a technical project is not technical knowledge — it's the ability to make everyone in the room feel heard, informed, and aligned. That's the work nobody writes a ticket for, but everybody notices when it's missing.</p>
+          <!-- 3: BillDesk — ABOVE (work) -->
+          <div class="ht-item">
+            <div class="ht-top">
+              <p class="ht-date">Apr 2019 – Aug 2021</p>
+              <p class="ht-title">Technical PO & Business Analyst</p>
+              <p class="ht-org">BillDesk, India</p>
+            </div>
+            <div class="ht-connector ht-conn-top"></div>
+            <div class="ht-node">2019</div>
+            <div class="ht-connector ht-conn-bot"></div>
+            <div class="ht-bottom"></div>
+          </div>
+
+          <!-- 4: Axis Bank — BELOW (work) -->
+          <div class="ht-item">
+            <div class="ht-top"></div>
+            <div class="ht-connector ht-conn-top"></div>
+            <div class="ht-node">2021</div>
+            <div class="ht-connector ht-conn-bot"></div>
+            <div class="ht-bottom">
+              <p class="ht-date">Sep 2021 – Aug 2022</p>
+              <p class="ht-title">Technical Product Manager</p>
+              <p class="ht-org">Axis Bank, India</p>
+            </div>
+          </div>
+
+          <!-- 5: Northeastern — ABOVE (education) -->
+          <div class="ht-item">
+            <div class="ht-top">
+              <p class="ht-date">Sep 2022 – May 2024</p>
+              <p class="ht-title">MS in Project Management</p>
+              <p class="ht-org">Northeastern University, Boston MA</p>
+            </div>
+            <div class="ht-connector ht-conn-top"></div>
+            <div class="ht-node ht-edu">2022</div>
+            <div class="ht-connector ht-conn-bot"></div>
+            <div class="ht-bottom"></div>
+          </div>
+
+          <!-- 6: Synopsys — BELOW (work) -->
+          <div class="ht-item">
+            <div class="ht-top"></div>
+            <div class="ht-connector ht-conn-top"></div>
+            <div class="ht-node">2023</div>
+            <div class="ht-connector ht-conn-bot"></div>
+            <div class="ht-bottom">
+              <p class="ht-date">Jul 2023 – Sep 2023</p>
+              <p class="ht-title">Program Management Intern</p>
+              <p class="ht-org">Synopsys Inc, United States</p>
+            </div>
+          </div>
+
+          <!-- 7: KeelWorks — ABOVE (work) -->
+          <div class="ht-item">
+            <div class="ht-top">
+              <p class="ht-date">May 2024 – Aug 2024</p>
+              <p class="ht-title">Product Manager</p>
+              <p class="ht-org">KeelWorks Foundation, United States</p>
+            </div>
+            <div class="ht-connector ht-conn-top"></div>
+            <div class="ht-node">May '24</div>
+            <div class="ht-connector ht-conn-bot"></div>
+            <div class="ht-bottom"></div>
+          </div>
+
+          <!-- 8: Scholarship America — BELOW (work) -->
+          <div class="ht-item">
+            <div class="ht-top"></div>
+            <div class="ht-connector ht-conn-top"></div>
+            <div class="ht-node">Sep '24</div>
+            <div class="ht-connector ht-conn-bot"></div>
+            <div class="ht-bottom">
+              <p class="ht-date">Sep 2024 – Feb 2026</p>
+              <p class="ht-title">Product Owner</p>
+              <p class="ht-org">Scholarship America, United States</p>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      <!-- Placeholder cards -->
-      <div class="grid-2">
-        <div class="card card-accent" style="display:flex;flex-direction:column;justify-content:space-between;min-height:200px;">
-          <div>
-            <div style="display:flex;gap:8px;margin-bottom:0.75rem;">
-              <span class="tag">EdTech</span>
-              <span class="tag">Consumer</span>
-            </div>
-            <h3 style="margin-bottom:0.5rem;">EdTech case study</h3>
-            <p style="font-size:0.9375rem;color:var(--gray-500);">Coming soon — currently documenting this project. It covers consumer product growth, user onboarding improvements, and cross-functional delivery.</p>
-          </div>
-          <p style="font-size:0.875rem;color:var(--purple-600);margin-top:1.25rem;">Coming soon →</p>
-        </div>
-
-        <div class="card card-accent" style="display:flex;flex-direction:column;justify-content:space-between;min-height:200px;">
-          <div>
-            <div style="display:flex;gap:8px;margin-bottom:0.75rem;">
-              <span class="tag">Fintech</span>
-              <span class="tag">Banking</span>
-            </div>
-            <h3 style="margin-bottom:0.5rem;">Financial services case study</h3>
-            <p style="font-size:0.9375rem;color:var(--gray-500);">Coming soon — covering process improvement, stakeholder alignment, and product delivery in a regulated banking environment.</p>
-          </div>
-          <p style="font-size:0.875rem;color:var(--purple-600);margin-top:1.25rem;">Coming soon →</p>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <!-- Approach section -->
-  <section style="background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);">
+  <section class="approach-section" style="background:var(--purple-50);border-top:1px solid var(--purple-100);border-bottom:1px solid var(--purple-100);">
     <div class="container">
       <p class="section-label">How I work</p>
       <h2 class="section-title">My PM approach</h2>
@@ -128,29 +277,31 @@
     </div>
   </section>
 
-  <section style="padding:4rem 0;">
-    <div class="container text-center">
-      <h2 style="margin-bottom:1rem;">Want the full picture?</h2>
-      <p style="color:var(--gray-500);max-width:440px;margin:0 auto 2rem;">These case studies are a snapshot. Reach out and I'll walk you through the details, the decisions, and the lessons learned.</p>
-      <a href="contact.html" class="btn btn-primary">Let's talk</a>
+  <section class="cta-section" style="background:var(--purple-900);padding:4.5rem 0;">
+    <div class="container" style="max-width:740px;">
+      <p class="section-label" style="color:var(--purple-400);">What drives me</p>
+      <h2 style="color:#ffffff;font-size:2rem;margin-bottom:1.5rem;">The "why".</h2>
+      <div style="border-left:3px solid var(--purple-400);padding:1.25rem 1.5rem;margin:0 0 2rem;background:rgba(255,255,255,0.05);border-radius:0 var(--radius-md) var(--radius-md) 0;">
+        <p style="font-size:1.0625rem;font-style:italic;color:#e0dcff;line-height:1.8;">"The best part of being a product management professional, for me, is the ability to step into the users' shoes — to truly understand their needs, and to effectively drive the product's vision and strategy, transforming ideas into tangible solutions."</p>
+      </div>
+      <p style="color:var(--purple-400);line-height:1.8;margin-bottom:1rem;">Product management is a deeply human discipline. It sits at the intersection of empathy and execution — understanding what people actually need, not just what they say they need, and then rallying the right people to build it right.</p>
+      <p style="color:var(--purple-400);line-height:1.8;">That's what pulled me in and what keeps me here. Not just being present at the moment an idea becomes a shipped product — but owning that journey. Making sure what gets built genuinely matters to the people using it.</p>
     </div>
   </section>
 
   <footer>
     <div class="footer-inner">
-      <span class="footer-logo">Kruti <span>Shah</span></span>
-      <ul class="footer-links">
-        <li><a href="about.html">My Story</a></li>
-        <li><a href="portfolio.html">Work</a></li>
-        <li><a href="ailab.html">AI Lab</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-inner">
-      <p class="footer-built">Built entirely with AI · Claude &amp; ChatGPT · shah-kruti.github.io · 2026</p>
+      <p class="footer-built">Human-directed. AI-assisted. &copy; 2026</p>
     </div>
   </footer>
 
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      var c = document.documentElement.getAttribute('data-theme');
+      var n = c === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', n);
+      localStorage.setItem('theme', n);
+    });
+  </script>
 </body>
 </html>
