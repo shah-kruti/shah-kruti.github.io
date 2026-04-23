@@ -345,6 +345,8 @@ footer {
 .svg-float-1 { animation: svgFloat 5s ease-in-out infinite; }
 .svg-float-2 { animation: svgFloat 5s ease-in-out infinite 1.2s; }
 .svg-float-3 { animation: svgFloat 5s ease-in-out infinite 2.4s; }
+.svg-float-4 { animation: svgFloat 5s ease-in-out infinite 0.6s; }
+.svg-float-5 { animation: svgFloat 5s ease-in-out infinite 1.8s; }
 
 @media (max-width: 768px) {
   .hero-grid { grid-template-columns: 1fr; }
