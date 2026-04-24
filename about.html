@@ -9,6 +9,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <script>(function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})();</script>
+  <style>
+    .quote-card { background:var(--purple-50); border-color:var(--purple-400); }
+    .quote-card p { color:var(--purple-700); }
+    [data-theme="dark"] .quote-card { background:var(--purple-900); }
+    [data-theme="dark"] .quote-card p { color:var(--purple-600); }
+  </style>
 </head>
 <body>
 
@@ -42,7 +48,7 @@
   <!-- Origin Story -->
   <section>
     <div class="container">
-      <div style="max-width:720px;">
+      <div>
         <p class="section-label">Where it started</p>
         <h2 style="font-size:1.75rem;margin-bottom:1.5rem;">The quit that changed everything</h2>
 
@@ -52,8 +58,8 @@
 
         <p style="margin-bottom:1.25rem;">So I did something that made everyone around me nervous: I quit. Without another job. Without a plan B. Without a safety net.</p>
 
-        <div style="border-left:3px solid var(--purple-400);padding:1.25rem 1.5rem;margin:2rem 0;background:var(--purple-900);border-radius:0 var(--radius-md) var(--radius-md) 0;">
-          <p style="font-size:1.0625rem;font-style:italic;color:var(--purple-600);line-height:1.75;">"I had no idea what came next. What I did know was that staying would cost me more than leaving."</p>
+        <div class="quote-card" style="border-left:3px solid var(--purple-400);padding:1.25rem 1.5rem;margin:2rem 0;border-radius:0 var(--radius-md) var(--radius-md) 0;">
+          <p style="font-size:1.0625rem;font-style:italic;line-height:1.75;">"I had no idea what came next. What I did know was that staying would cost me more than leaving."</p>
         </div>
 
         <p style="margin-bottom:1.25rem;">What followed was one of the most clarifying periods of my life. Instead of blasting LinkedIn with applications, I did something quieter — I started having real conversations. With friends. With former colleagues. With people I hadn't spoken to in years. No pitch, no agenda. Just genuine curiosity about what they were building and where they were headed.</p>
